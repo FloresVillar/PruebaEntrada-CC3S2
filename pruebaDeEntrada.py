@@ -67,63 +67,6 @@ for i in range(N):
             aux=vv[j,2]
             vv[j,2]=vv[j-1,2]
             vv[j-1,2]=aux
-#print(vv)
-#obteniendo longitudes, primera forma , no resulta 
-suma=0
-for i in range(1,N-1):
-    if(vv[i,1]>vv[i-1,1] and vv[i,1]<vv[i-1,2]):
-        suma+=vv[i-1,0]
-        if(vv[i,0]>=vv[i-1,0]):
-            suma+=(vv[i,0]-vv[i-1,0])
-        else:
-            suma+=(vv[i-1,0]-vv[i,0])
-    else:
-        if(vv[i,1]>=vv[i-1,2]):
-            if(vv[i,1]<=vv[i+1,1]):
-                suma+=vv[i,0]
-            else:
-                if(vv[i,0]>=vv[i+1,0]):
-                    suma+=(vv[i,0]-vv[i+1,0])
-                else:
-                    suma+=(vv[i+1,0]-vv[i,0])
-    if(vv[i,2]>vv[i-1,2] and vv[i,2]<vv[i+1,2]):
-        suma+=vv[i+1,0]
-        if(vv[i,2]>=vv[i+1,2]):
-            if(vv[i,0]>vv[i+1,0]):
-                suma+=vv[i,0]-vv[i+1,0]
-            else:
-                suma+=vv[i,0]
-        else:
-            suma+=vv[i,0]
-    else:
-        if(vv[i,2]<=vv[i+1,2]):
-            if(vv[i,2]<=vv[i-1,2]):
-                suma+=(vv[i,0]-vv[i-1,0])
-            else:
-                suma+=vv[i,0]
-        else: 
-            if(vv[i,2]>=vv[i+1,1] and vv[i,2]<=vv[i+1,2]):
-                suma+=(vv[i,0]-vv[i+1,0])
-print("la longitud es %d"%(suma))
-#forma alternativa, tener esperanzas
-suma= 0
-N=len(vv)
-for i in range(1,N-1):
-    if(vv[i,1]<vv[i-1,2]):
-        if(vv[i,0]>vv[i-1,0]):
-            suma+=vv[i,0]
-        else:
-            suma+=vv[i-1,0]
-    else:
-        if(vv[i,1]<vv[i+1,1]):
-            suma+=vv[i,0]
-        else:
-            if(vv[i,0]<vv[i+1,0]):
-                suma+=vv[i+1,0]
-            else:
-                suma+=vv[i,0]
-print("la longitud es %d"%(suma))        
-        
 N=len(vv)
 suma=0
 for i in range(1,N-1):
@@ -141,3 +84,61 @@ for i in range(1,N-1):
         else:
             suma+=(max(vv[i,0],vv[i+1,0]))
 print("la longitud es %d"%(suma))  
+
+#print(vv)
+# #obteniendo longitudes, primera forma , no resulta 
+# suma=0
+# for i in range(1,N-1):
+#     if(vv[i,1]>vv[i-1,1] and vv[i,1]<vv[i-1,2]):
+#         suma+=vv[i-1,0]
+#         if(vv[i,0]>=vv[i-1,0]):
+#             suma+=(vv[i,0]-vv[i-1,0])
+#         else:
+#             suma+=(vv[i-1,0]-vv[i,0])
+#     else:
+#         if(vv[i,1]>=vv[i-1,2]):
+#             if(vv[i,1]<=vv[i+1,1]):
+#                 suma+=vv[i,0]
+#             else:
+#                 if(vv[i,0]>=vv[i+1,0]):
+#                     suma+=(vv[i,0]-vv[i+1,0])
+#                 else:
+#                     suma+=(vv[i+1,0]-vv[i,0])
+#     if(vv[i,2]>vv[i-1,2] and vv[i,2]<vv[i+1,2]):
+#         suma+=vv[i+1,0]
+#         if(vv[i,2]>=vv[i+1,2]):
+#             if(vv[i,0]>vv[i+1,0]):
+#                 suma+=vv[i,0]-vv[i+1,0]
+#             else:
+#                 suma+=vv[i,0]
+#         else:
+#             suma+=vv[i,0]
+#     else:
+#         if(vv[i,2]<=vv[i+1,2]):
+#             if(vv[i,2]<=vv[i-1,2]):
+#                 suma+=(vv[i,0]-vv[i-1,0])
+#             else:
+#                 suma+=vv[i,0]
+#         else: 
+#             if(vv[i,2]>=vv[i+1,1] and vv[i,2]<=vv[i+1,2]):
+#                 suma+=(vv[i,0]-vv[i+1,0])
+# print("la longitud es %d"%(suma))
+# #forma alternativa, tener esperanzas
+# suma= 0
+# N=len(vv)
+# for i in range(1,N-1):
+#     if(vv[i,1]<vv[i-1,2]):
+#         if(vv[i,0]>vv[i-1,0]):
+#             suma+=vv[i,0]
+#         else:
+#             suma+=vv[i-1,0]
+#     else:
+#         if(vv[i,1]<vv[i+1,1]):
+#             suma+=vv[i,0]
+#         else:
+#             if(vv[i,0]<vv[i+1,0]):
+#                 suma+=vv[i+1,0]
+#             else:
+#                 suma+=vv[i,0]
+# print("la longitud es %d"%(suma))        
+        

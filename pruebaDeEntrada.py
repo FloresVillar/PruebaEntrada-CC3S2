@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Sep  6 00:32:10 2023
-
+EJERCICIO DE LAS PLATAFORMAS
 @author: ESAU FLORES
 """
 import numpy
